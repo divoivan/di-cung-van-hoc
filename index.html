@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đi cùng Văn học - Trạm dừng chân tâm hồn</title>
+    <style>
+        /* PHẦN 1: MÀU SẮC VÀ PHÔNG CHỮ */
+        :root {
+            --sky-blue: #A2D2FF;
+            --pastel-pink: #FFC8DD;
+            --paper-white: #FBFAFF;
+            --text-gray: #5A5A5A;
+            --accent-blue: #BDE0FE;
+        }
+
+        body {
+            background-color: var(--sky-blue);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-gray);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* PHẦN 2: BỐ CỤC CUỐN SỔ (NOTEBOOK) */
+        .notebook {
+            background: var(--paper-white);
+            width: 100%;
+            max-width: 850px;
+            min-height: 95vh;
+            border-radius: 15px;
+            box-shadow: 12px 12px 0px var(--pastel-pink);
+            padding: 40px;
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px dashed var(--pastel-pink);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .logo { font-size: 2.2em; font-weight: bold; color: #4A90E2; }
+
+        /* PHẦN 3: DANH SÁCH TÁC PHẨM/TÁC GIẢ */
+        .section-title {
+            color: #FF8FB1;
+            border-left: 5px solid var(--pastel-pink);
+            padding-left: 15px;
+            margin: 30px 0 15px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .item-card {
+            background: white;
+            border: 1.5px solid var(--accent-blue);
+            padding: 15px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .item-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pastel-pink);
+        }
+
+        .tag {
+            font-size: 0.75em;
+            background: var(--pastel-pink);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            float: right;
+        }
+
+        /* PHẦN 4: NHẬT KÝ ĐỌC SÁCH */
+        .journal-container {
+            background: #FFF9FB;
+            border: 2px solid var(--pastel-pink);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .input-line {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid var(--sky-blue);
+            background: transparent;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            font-size: 1em;
+            outline: none;
+            color: var(--text-gray);
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px dashed var(--sky-blue);
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            resize: vertical;
+            min-height: 120px;
+            outline: none;
+        }
+
+        .btn-save {
+            background: var(--pastel-pink);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            display: block;
+            width: 100%;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.85em;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="notebook">
+    <header>
+        <div class="logo">🖋️ Đi cùng Văn học 📝</div>
+        <p>Học văn thông minh - Đọc văn bằng cả trái tim</p>
+    </header>
+
+    <h3 class="section-title">📖 Trạm Gợi Ý (Khái quát nhanh)</h3>
+    <div class="grid">
+        <div class="item-card">
+            <span class="tag">SGK</span>
+            <strong>Vội vàng (Xuân Diệu)</strong>
+            <p style="font-size: 0.9em;">Yêu đời cuồng nhiệt như một cuộc chạy đua với thời gian.</p>
+        </div>
+        <div class="item-card">
+            <span class="tag">SGK</span>
+            <strong>Tây Tiến (Quang Dũng)</strong>
+            <p style="font-size: 0.9em;">Vẻ đẹp bi tráng và tâm hồn lãng mạn của người lính trẻ.</p>
+        </div>
+        <div class="item-card">
+            <span class="tag">Mới lạ</span>
+            <strong>Nguyễn Ngọc Tư</strong>
+            <p style="font-size: 0.9em;">Những câu chuyện miền Tây mộc mạc, chạm đến tận cùng nỗi đau.</p>
+        </div>
+        <div class="item-card">
+            <span class="tag">Mới lạ</span>
+            <strong>Higashino Keigo</strong>
+            <p style="font-size: 0.9em;">Sự chữa lành ấm áp thông qua những lá thư xuyên không gian.</p>
+        </div>
+    </div>
+
+    <h3 class="section-title">🖋️ Nhật Ký Đọc Sách Của Bạn</h3>
+    <div class="journal-container">
+        <p><strong>Hôm nay bạn vừa đọc tác phẩm nào?</strong></p>
+        <input type="text" class="input-line" placeholder="Nhập tên tác giả hoặc tác phẩm...">
+        
+        <p><strong>Cảm xúc đọng lại là gì?</strong></p>
+        <textarea placeholder="Ghi lại những điều làm bạn trăn trở hoặc yêu mến..."></textarea>
+        
+        <button class="btn-save" onclick="alert('Trang web hiện tại chỉ hiển thị giao diện. Để lưu dữ liệu thật, bạn cần kết nối thêm database!')">Ghi lại kỷ niệm ✨</button>
+    </div>
+
+    <footer>
+        "Văn học là nhân học" - Cảm ơn bạn đã ghé thăm trang web!
+    </footer>
+</div>
+
+</body>
+</html>
