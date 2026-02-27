@@ -12,110 +12,19 @@
             --text-gray: #5A5A5A;
             --accent-blue: #BDE0FE;
         }
-        body { 
-            background-color: var(--sky-blue); 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            color: var(--text-gray); 
-            margin: 0; 
-            display: flex; 
-            justify-content: center; 
-            padding: 20px; 
-        }
-        /* Khung giấy trắng bao bọc toàn bộ nội dung */
-        .notebook { 
-            background: var(--paper-white); 
-            width: 100%; 
-            max-width: 950px; 
-            min-height: 95vh; 
-            border-radius: 20px; 
-            box-shadow: 15px 15px 0px var(--pastel-pink); 
-            padding: 40px; 
-            border: 2px solid #e0e0e0; 
-            box-sizing: border-box;
-            position: relative;
-        }
-        header { 
-            text-align: center; 
-            border-bottom: 2px dashed var(--pastel-pink); 
-            padding-bottom: 20px; 
-            margin-bottom: 30px; 
-        }
+        body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
+        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; position: relative; }
+        header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
         .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
-        .section-title { 
-            color: #FF8FB1; 
-            border-left: 5px solid var(--pastel-pink); 
-            padding-left: 15px; 
-            margin: 40px 0 20px; 
-            font-size: 1.5em; 
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
-        }
-        .item-card { 
-            background: white; 
-            border: 1.5px solid var(--accent-blue); 
-            padding: 20px; 
-            border-radius: 15px; 
-            transition: 0.3s; 
-        }
-        .item-card:hover { 
-            transform: translateY(-5px); 
-            border-color: var(--pastel-pink); 
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.05); 
-        }
-        .tag { 
-            font-size: 0.7em; 
-            background: var(--accent-blue); 
-            color: #4A90E2; 
-            padding: 3px 10px; 
-            border-radius: 10px; 
-            font-weight: bold; 
-            display: inline-block; 
-            margin-bottom: 10px; 
-        }
-        
-        /* CSS cho Nhật ký */
-        .journal-container { 
-            background: #FFF9FB; 
-            border: 2px solid var(--pastel-pink); 
-            border-radius: 15px; 
-            padding: 25px; 
-            margin-top: 40px; 
-        }
-        textarea { 
-            width: 100%; 
-            border: 1px dashed var(--sky-blue); 
-            padding: 15px; 
-            border-radius: 10px; 
-            resize: vertical; 
-            outline: none; 
-            margin-top: 10px; 
-            min-height: 120px; 
-            box-sizing: border-box; 
-            font-family: inherit;
-        }
-        
-        /* CSS cho Khung Chat */
-        .chat-container { 
-            margin-top: 40px; 
-            background: white; 
-            border: 2px solid var(--accent-blue); 
-            border-radius: 20px; 
-            padding: 20px; 
-            box-shadow: 8px 8px 0px var(--accent-blue); 
-        }
-        
-        /* CSS cho Footer */
-        footer { 
-            text-align: center; 
-            font-size: 0.85em; 
-            opacity: 0.7; 
-            padding: 20px 0; 
-            border-top: 1px dashed var(--pastel-pink); 
-            margin-top: 50px; 
-        }
+        .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
+        .item-card:hover { transform: translateY(-5px); border-color: var(--pastel-pink); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .tag { font-size: 0.7em; background: var(--accent-blue); color: #4A90E2; padding: 3px 10px; border-radius: 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
+        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; font-family: inherit; }
+        .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 20px; box-shadow: 8px 8px 0px var(--accent-blue); }
+        footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -136,20 +45,23 @@
         <div class="item-card"><span class="tag">Nguyễn Du</span><h3>Truyện Kiều</h3><p>Bản cáo trạng đanh thép và tiếng lòng nhân đạo bao la.</p></div>
     </div>
 
+    <h3 class="section-title">🌍 Văn học Nước ngoài</h3>
+    <div class="grid">
+        <div class="item-card"><span class="tag">Hemingway</span><h3>Ông già và biển cả</h3><p>Con người có thể bị hủy diệt, nhưng không bao giờ bị khuất phục.</p></div>
+        <div class="item-card"><span class="tag">Walter Macken</span><h3>Bồ câu bay đi tìm bà</h3><p>Hành trình dũng cảm tìm kiếm hơi ấm gia đình.</p></div>
+    </div>
+
     <div class="journal-container">
         <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <p style="font-size: 0.85em;">Cảm xúc riêng của mậy (Tự lưu trên máy này):</p>
-        <textarea id="myJournal" placeholder="Hôm nay mậy đọc được gì hay không?..." oninput="autoSave()"></textarea>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của bạn tại đây..." oninput="autoSave()"></textarea>
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
-            <p id="status" style="font-size: 0.8em; color: #4A90E2; margin: 0;"></p>
-            <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: bold;">🗑️ Xóa hết</button>
+            <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
+            <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
         </div>
     </div>
 
     <div class="chat-container">
         <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
-        <p style="font-size: 0.85em; color: #666; margin-bottom: 15px;">Nơi mọi người cùng "tám" chuyện văn chương:</p>
-        
         <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0Qdz" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
     </div>
 
@@ -160,32 +72,21 @@
 </div>
 
 <script>
-    // Load nhật ký từ bộ nhớ máy khi mở web
     window.onload = function() {
         const savedData = localStorage.getItem('vanHocDiary');
-        if (savedData) {
-            document.getElementById('myJournal').value = savedData;
-        }
+        if (savedData) { document.getElementById('myJournal').value = savedData; }
     };
-
-    // Tự động lưu nhật ký mỗi khi gõ
     function autoSave() {
-        const content = document.getElementById('myJournal').value;
-        localStorage.setItem('vanHocDiary', content);
-        const status = document.getElementById('status');
-        status.innerText = "✨ Đang tự động lưu...";
-        setTimeout(() => { status.innerText = ""; }, 1000);
+        localStorage.setItem('vanHocDiary', document.getElementById('myJournal').value);
+        document.getElementById('status').innerText = "✨ Đã lưu...";
+        setTimeout(() => { document.getElementById('status').innerText = ""; }, 1000);
     }
-
-    // Xóa sạch nhật ký cá nhân
     function clearDiary() {
-        if (confirm("Mậy có chắc muốn xóa hết nhật ký để viết lại từ đầu không?")) {
+        if (confirm("Xóa sạch nhật ký nha?")) {
             document.getElementById('myJournal').value = "";
             localStorage.removeItem('vanHocDiary');
-            alert("Đã xóa sạch sành sanh! ✨");
         }
     }
 </script>
-
 </body>
 </html>
