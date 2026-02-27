@@ -157,32 +157,38 @@
         <div class="item-card"><span class="tag">Hemingway</span><h3>Ông già và biển cả</h3><p>Con người có thể bị hủy diệt, nhưng không bao giờ bị khuất phục.</p></div>
     </div>
 
-    <div class="journal-container">
+ <div class="journal-container" style="background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; position: relative;">
     <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-    <p>Ghi lại cảm xúc của bạn (Dữ liệu sẽ được lưu tự động trên trình duyệt này):</p>
-    <textarea id="myJournal" placeholder="Hôm nay bạn thấy thế nào khi đọc xong?..." oninput="saveData()"></textarea>
-    <p id="saveStatus" style="font-size: 0.8em; color: #4A90E2; font-style: italic;"></p>
+    <p>Ghi lại cảm xúc của bạn (Dữ liệu tự lưu trên máy này):</p>
+    
+    <textarea id="myJournal" style="width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; min-height: 150px; box-sizing: border-box;" placeholder="Nhập cảm xúc tại đây..." oninput="autoSave()"></textarea>
+    
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
+        <p id="status" style="font-size: 0.8em; color: #4A90E2; margin: 0;"></p>
+        <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: bold; transition: 0.3s;">🗑️ Xóa tất cả</button>
+    </div>
 </div>
 
 <script>
-    // Hàm này giúp lấy dữ liệu đã lưu khi bạn vừa mở web
     window.onload = function() {
-        const savedText = localStorage.getItem('journal_content');
-        if (savedText) {
-            document.getElementById('myJournal').value = savedText;
-        }
+        const savedData = localStorage.getItem('vanHocDiary');
+        if (savedData) { document.getElementById('myJournal').value = savedData; }
     };
 
-    // Hàm này giúp lưu chữ ngay lập tức khi bạn đang gõ
-    function saveData() {
-        const text = document.getElementById('myJournal').value;
-        localStorage.setItem('journal_content', text);
-        document.getElementById('saveStatus').innerText = "Đã tự động lưu... ✨";
-        
-        // Xóa dòng thông báo sau 2 giây
-        setTimeout(() => {
-            document.getElementById('saveStatus').innerText = "";
-        }, 2000);
+    function autoSave() {
+        const content = document.getElementById('myJournal').value;
+        localStorage.setItem('vanHocDiary', content);
+        const status = document.getElementById('status');
+        status.innerText = "✨ Đã lưu...";
+        setTimeout(() => { status.innerText = ""; }, 1000);
+    }
+
+    function clearDiary() {
+        if (confirm("Bạn có chắc muốn xóa sạch sành sanh để viết lại từ đầu không?")) {
+            document.getElementById('myJournal').value = ""; // Xóa trên màn hình
+            localStorage.removeItem('vanHocDiary'); // Xóa trong bộ nhớ máy
+            alert("Đã dọn dẹp sạch sẽ rồi nha! ✨");
+        }
     }
 </script>
         <h3>💌 Gửi lời nhắn cho tụi mình</h3>
@@ -197,5 +203,6 @@
 
 </body>
 </html>
+
 
 
