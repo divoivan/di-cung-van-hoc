@@ -41,7 +41,7 @@
         <div class="item-card"><span class="tag">Nguyễn Tuân</span><h3>Chữ người tử tù</h3><p>Vẻ đẹp hiên ngang tỏa sáng giữa chốn ngục tù tăm tối.</p></div>
         <div class="item-card"><span class="tag">Quang Dũng</span><h3>Tây Tiến</h3><p>Khúc ca bi tráng về những người lính lãng mạn, hào hoa.</p></div>
         <div class="item-card"><span class="tag">Thạch Lam</span><h3>Hai đứa trẻ</h3><p>Nỗi buồn man mác và khát vọng về một ánh sáng xa xăm.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Đôi mắt</h3><p>Học cách thay đổi cái nhìn để thấu hiểu sự thật cuộc đời.</p></div>
+        <div class="item-card"><span class="tag">Nguyễn Nhật Ánh</span><h3>Mắt biếc</h3><p>Một chút buồn trong trẻo cho những tâm hồn mộng mơ.</p></div>
         <div class="item-card"><span class="tag">Nguyễn Du</span><h3>Truyện Kiều</h3><p>Bản cáo trạng đanh thép và tiếng lòng nhân đạo bao la.</p></div>
     </div>
 
@@ -55,7 +55,7 @@
 
     <div class="journal-container">
         <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy..." oninput="autoSave()"></textarea>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy ở đây nè..." oninput="autoSave()"></textarea>
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
             <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
             <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
@@ -84,7 +84,7 @@
         setTimeout(() => { document.getElementById('status').innerText = ""; }, 1000);
     }
     function clearDiary() {
-        if (confirm("Xóa thiệt không mậy?")) {
+        if (confirm("Xóa thiệt nha mậy?")) {
             document.getElementById('myJournal').value = "";
             localStorage.removeItem('vanHocDiary');
         }
