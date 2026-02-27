@@ -12,168 +12,77 @@
             --text-gray: #5A5A5A;
             --accent-blue: #BDE0FE;
         }
-
-        body {
-            background-color: var(--sky-blue);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-gray);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .notebook {
-            background: var(--paper-white);
-            width: 100%;
-            max-width: 950px;
-            min-height: 95vh;
-            border-radius: 20px;
-            box-shadow: 15px 15px 0px var(--pastel-pink);
-            padding: 40px;
-            border: 2px solid #e0e0e0;
-        }
-
-        header {
-            text-align: center;
-            border-bottom: 2px dashed var(--pastel-pink);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
+        body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
+        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; position: relative; }
+        header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
         .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
-
-        .section-title {
-            color: #FF8FB1;
-            border-left: 5px solid var(--pastel-pink);
-            padding-left: 15px;
-            margin: 40px 0 20px;
-            font-size: 1.5em;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .item-card {
-            background: white;
-            border: 1.5px solid var(--accent-blue);
-            padding: 20px;
-            border-radius: 15px;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .item-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--pastel-pink);
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .tag {
-            font-size: 0.7em;
-            background: var(--accent-blue);
-            color: #4A90E2;
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-weight: bold;
-            width: fit-content;
-            margin-bottom: 10px;
-        }
-
-        .contact-box {
-            background: #EAF4FF;
-            border: 2px dashed var(--pastel-pink);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 50px 0;
-            text-align: center;
-        }
-
-        .email-btn {
-            display: inline-block;
-            background: var(--pastel-pink);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .email-btn:hover { background: #ffafcc; transform: scale(1.05); }
-
-        .journal-container {
-            background: #FFF9FB;
-            border: 2px solid var(--pastel-pink);
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 40px;
-        }
-
-        textarea {
-            width: 100%; border: 1px dashed var(--sky-blue);
-            padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px;
-        }
-
-        footer { text-align: center; font-size: 0.85em; opacity: 0.6; padding: 20px 0; }
+        .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
+        .item-card:hover { transform: translateY(-5px); border-color: var(--pastel-pink); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .tag { font-size: 0.7em; background: var(--accent-blue); color: #4A90E2; padding: 3px 10px; border-radius: 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        /* FIX KHUNG CHAT */
+        .chat-container { margin: 30px 0; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 20px; box-shadow: 8px 8px 0px var(--accent-blue); }
+        
+        .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
+        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; }
+        
+        .contact-box { background: #EAF4FF; border: 2px dashed var(--pastel-pink); border-radius: 20px; padding: 30px; margin: 40px 0; text-align: center; }
+        .email-btn { display: inline-block; background: var(--pastel-pink); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        
+        footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); }
     </style>
 </head>
 <body>
+
 <div class="notebook">
     <header>
         <div class="logo">🖋️ Đi cùng Văn học 📝</div>
         <p>Học văn thông minh - Đọc văn bằng trái tim</p>
     </header>
-<iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0QdZ" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-    <div class="chat-container" style="margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 25px; box-shadow: 10px 10px 0px var(--accent-blue);">
-    <h3 style="color: #4A90E2; margin-top: 0; display: flex; align-items: center; gap: 10px;">💬 Góc Thảo Luận Công Khai</h3>
-    <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Mọi người cùng vào chia sẻ cảm xúc và làm quen với nhau nhé! ✨</p>
-    
-    <div style="width:100%; text-align:center;">
-        
-        </div>
-</div>
+
+    <div class="chat-container">
+        <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
+        <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0Qdz" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+    </div>
+
     <h3 class="section-title">🇻🇳 Văn học Việt Nam</h3>
     <div class="grid">
         <div class="item-card"><span class="tag">Xuân Diệu</span><h3>Vội vàng</h3><p>Yêu đời cuồng nhiệt như một cuộc chạy đua với thời gian.</p></div>
-        <div class="item-card"><span class="tag">Nguyễn Tuân</span><h3>Chữ người tử tù</h3><p>Vẻ đẹp hiên ngang tỏa sáng giữa chốn ngục tù tăm tối.</p></div>
-        <div class="item-card"><span class="tag">Quang Dũng</span><h3>Tây Tiến</h3><p>Khúc ca bi tráng về những người lính lãng mạn, hào hoa.</p></div>
-        <div class="item-card"><span class="tag">Thạch Lam</span><h3>Hai đứa trẻ</h3><p>Nỗi buồn man mác và khát vọng về một ánh sáng xa xăm.</p></div>
+        <div class="item-card"><span class="tag">Bảo Ninh</span><h3>Nỗi buồn chiến tranh</h3><p>Mảnh vỡ ký ức bi tráng và đầy ám ảnh về thân phận con người.</p></div>
+        <div class="item-card"><span class="tag">Nam Cao</span><h3>Đôi mắt</h3><p>Học cách thay đổi cái nhìn để thấu hiểu sự thật cuộc đời.</p></div>
+        <div class="item-card"><span class="tag">Nam Cao</span><h3>Giăng sáng</h3><p>Nghệ thuật phải là tiếng đau khổ thoát ra từ kiếp người.</p></div>
         <div class="item-card"><span class="tag">Nguyễn Nhật Ánh</span><h3>Mắt biếc</h3><p>Một chút buồn trong trẻo cho những tâm hồn mộng mơ.</p></div>
         <div class="item-card"><span class="tag">Nguyễn Du</span><h3>Truyện Kiều</h3><p>Bản cáo trạng đanh thép và tiếng lòng nhân đạo bao la.</p></div>
-        <div class="item-card"><span class="tag">Bảo Ninh</span><h3>Nỗi buồn chiến tranh</h3><p>Góc khuất bi tráng và đầy ám ảnh sau cuộc chiến.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Đôi mắt</h3><p>Học cách thay đổi cái nhìn để thấu hiểu con người.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Giăng sáng</h3><p>Nghệ thuật phải là tiếng đau khổ thoát ra từ kiếp người.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Trẻ con không được ăn thịt chó</h3><p>Nỗi đau xót về cái nghèo bóp nghẹt sự hồn nhiên.</p></div>
-        <div class="item-card"><span class="tag">Nguyễn Ngọc Tư</span><h3>Mua nhà</h3><p>Khát khao về mái ấm và những dằn vặt của lòng nhân hậu.</p></div>
     </div>
 
     <h3 class="section-title">🌍 Văn học Nước ngoài</h3>
     <div class="grid">
-        <div class="item-card"><span class="tag">S.Exupéry</span><h3>Hoàng tử bé</h3><p>Dành cho những người lớn đã từng là trẻ con.</p></div>
-        <div class="item-card"><span class="tag">H.Keigo</span><h3>Tiệm tạp hóa Namiya</h3><p>Sự kết nối kỳ diệu qua những lá thư xuyên không gian.</p></div>
+        <div class="item-card"><span class="tag">Hemingway</span><h3>Ông già và biển cả</h3><p>Con người có thể bị hủy diệt, nhưng không bao giờ bị khuất phục.</p></div>
         <div class="item-card"><span class="tag">Walter Macken</span><h3>Bồ câu bay đi tìm bà</h3><p>Hành trình dũng cảm tìm kiếm hơi ấm gia đình.</p></div>
         <div class="item-card"><span class="tag">Kazuo Ishiguro</span><h3>Mãi đừng xa tôi</h3><p>Khúc ca buồn sâu thẳm về giá trị con người.</p></div>
-        <div class="item-card"><span class="tag">Hector Malot</span><h3>Trong gia đình</h3><p>Nghị lực phi thường của cô bé Perrine trên đường tìm người thân.</p></div>
-        <div class="item-card"><span class="tag">Hemingway</span><h3>Ông già và biển cả</h3><p>Con người có thể bị hủy diệt, nhưng không bao giờ bị khuất phục.</p></div>
+        <div class="item-card"><span class="tag">Hector Malot</span><h3>Trong gia đình</h3><p>Nghị lực phi thường của cô bé Perrine tìm lại người thân.</p></div>
     </div>
 
- <div class="journal-container" style="background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; position: relative;">
-    <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-    <p>Ghi lại cảm xúc của bạn (Dữ liệu tự lưu trên máy này):</p>
-    
-    <textarea id="myJournal" style="width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; min-height: 150px; box-sizing: border-box;" placeholder="Nhập cảm xúc tại đây..." oninput="autoSave()"></textarea>
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-        <p id="status" style="font-size: 0.8em; color: #4A90E2; margin: 0;"></p>
-        <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.8em; font-weight: bold; transition: 0.3s;">🗑️ Xóa tất cả</button>
+    <div class="journal-container">
+        <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của bạn tại đây..." oninput="autoSave()"></textarea>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
+            <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
+        </div>
     </div>
+
+    <div class="contact-box">
+        <h3>💌 Gửi lời nhắn cho tụi mình</h3>
+        <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">✉️ dicungvanhoc@gmail.com</a>
+    </div>
+
+    <footer>
+        <p>P/S: Đi cùng Văn học • Chúc bạn tìm thấy niềm vui trong từng trang sách 🖋️</p>
+        <p>© 2026 Đi cùng Văn học</p>
+    </footer>
 </div>
 
 <script>
@@ -181,30 +90,17 @@
         const savedData = localStorage.getItem('vanHocDiary');
         if (savedData) { document.getElementById('myJournal').value = savedData; }
     };
-
     function autoSave() {
-        const content = document.getElementById('myJournal').value;
-        localStorage.setItem('vanHocDiary', content);
-        const status = document.getElementById('status');
-        status.innerText = "✨ Đã lưu...";
-        setTimeout(() => { status.innerText = ""; }, 1000);
+        localStorage.setItem('vanHocDiary', document.getElementById('myJournal').value);
+        document.getElementById('status').innerText = "✨ Đã lưu...";
+        setTimeout(() => { document.getElementById('status').innerText = ""; }, 1000);
     }
-
     function clearDiary() {
-        if (confirm("Bạn có chắc muốn xóa sạch sành sanh để viết lại từ đầu không?")) {
-            document.getElementById('myJournal').value = ""; // Xóa trên màn hình
-            localStorage.removeItem('vanHocDiary'); // Xóa trong bộ nhớ máy
-            alert("Đã dọn dẹp sạch sẽ rồi nha! ✨");
+        if (confirm("Xóa sạch nhật ký nha?")) {
+            document.getElementById('myJournal').value = "";
+            localStorage.removeItem('vanHocDiary');
         }
     }
 </script>
-        <h3>💌 Gửi lời nhắn cho tụi mình</h3>
-        <p>Góp ý hoặc chia sẻ mẩu chuyện văn chương của bạn tại:</p>
-        <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">✉️ dicungvanhoc@gmail.com</a>
-    </div>
- 
-
-
-
-
-
+</body>
+</html>
