@@ -15,7 +15,7 @@
         body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
         .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; position: relative; }
         header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
-        .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
+        .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; display: flex; align-items: center; justify-content: center; gap: 10px; }
         .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
@@ -23,7 +23,7 @@
         .tag { font-size: 0.7em; background: var(--accent-blue); color: #4A90E2; padding: 3px 10px; border-radius: 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
         .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
         textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; font-family: inherit; }
-        .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 20px; box-shadow: 8px 8px 0px var(--accent-blue); }
+        .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 25px; box-shadow: 10px 10px 0px var(--accent-blue); }
         footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); margin-top: 50px; }
     </style>
 </head>
@@ -41,7 +41,7 @@
         <div class="item-card"><span class="tag">Nguyễn Tuân</span><h3>Chữ người tử tù</h3><p>Vẻ đẹp hiên ngang tỏa sáng giữa chốn ngục tù tăm tối.</p></div>
         <div class="item-card"><span class="tag">Quang Dũng</span><h3>Tây Tiến</h3><p>Khúc ca bi tráng về những người lính lãng mạn, hào hoa.</p></div>
         <div class="item-card"><span class="tag">Thạch Lam</span><h3>Hai đứa trẻ</h3><p>Nỗi buồn man mác và khát vọng về một ánh sáng xa xăm.</p></div>
-        <div class="item-card"><span class="tag">Nguyễn Nhật Ánh</span><h3>Mắt biếc</h3><p>Một chút buồn trong trẻo cho những tâm hồn mộng mơ.</p></div>
+        <div class="item-card"><span class="tag">Nam Cao</span><h3>Đôi mắt</h3><p>Học cách thay đổi cái nhìn để thấu hiểu sự thật cuộc đời.</p></div>
         <div class="item-card"><span class="tag">Nguyễn Du</span><h3>Truyện Kiều</h3><p>Bản cáo trạng đanh thép và tiếng lòng nhân đạo bao la.</p></div>
     </div>
 
@@ -55,7 +55,7 @@
 
     <div class="journal-container">
         <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy ở đây nè..." oninput="autoSave()"></textarea>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy ở đây nè..."></textarea>
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
             <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
             <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
@@ -63,7 +63,8 @@
     </div>
 
     <div class="chat-container">
-        <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
+        <h3 style="color: #4A90E2; margin-top: 0; display: flex; align-items: center; gap: 10px;">💬 Góc Thảo Luận Công Khai</h3>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Mọi người cùng vào chia sẻ cảm xúc và làm quen với nhau nhé! ✨</p>
         <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0Qdz" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
     </div>
 
@@ -78,13 +79,13 @@
         const savedData = localStorage.getItem('vanHocDiary');
         if (savedData) { document.getElementById('myJournal').value = savedData; }
     };
-    function autoSave() {
-        localStorage.setItem('vanHocDiary', document.getElementById('myJournal').value);
+    document.getElementById('myJournal').addEventListener('input', function() {
+        localStorage.setItem('vanHocDiary', this.value);
         document.getElementById('status').innerText = "✨ Đã lưu...";
         setTimeout(() => { document.getElementById('status').innerText = ""; }, 1000);
-    }
+    });
     function clearDiary() {
-        if (confirm("Xóa thiệt nha mậy?")) {
+        if (confirm("Xóa thiệt không mậy?")) {
             document.getElementById('myJournal').value = "";
             localStorage.removeItem('vanHocDiary');
         }
