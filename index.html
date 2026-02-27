@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đi cùng Văn học - Trạm dừng chân tâm hồn</title>
+    <title>Đi cùng Văn học</title>
     <style>
         :root {
-            --sky-blue: #A2D2FF;
-            --pastel-pink: #FFC8DD;
-            --paper-white: #FBFAFF;
-            --text-gray: #5A5A5A;
-            --accent-blue: #BDE0FE;
+            --sky-blue: #A2D2FF; --pastel-pink: #FFC8DD; --paper-white: #FBFAFF;
+            --text-gray: #5A5A5A; --accent-blue: #BDE0FE;
         }
         body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
-        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; position: relative; }
+        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; }
         header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
         .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
         .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
-        .item-card:hover { transform: translateY(-5px); border-color: var(--pastel-pink); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .item-card:hover { transform: translateY(-5px); border-color: var(--pastel-pink); }
         .tag { font-size: 0.7em; background: var(--accent-blue); color: #4A90E2; padding: 3px 10px; border-radius: 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        /* Phần Nhật ký */
         .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
-        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; font-family: inherit; }
+        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; }
+        
+        /* Phần Liên hệ cũ mậy thích đây */
+        .contact-box { background: #EAF4FF; border: 2px dashed var(--pastel-pink); border-radius: 20px; padding: 30px; margin: 40px 0; text-align: center; }
+        .email-btn { display: inline-block; background: var(--pastel-pink); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+
+        /* Khung Chat */
         .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 25px; box-shadow: 10px 10px 0px var(--accent-blue); }
-        .contact-section { margin-top: 40px; padding: 30px; background: #f0f7ff; border-radius: 20px; text-align: center; border: 2px dashed var(--pastel-pink); }
-        .email-btn { display: inline-block; padding: 12px 30px; background: var(--pastel-pink); color: white; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .email-btn:hover { background: #ffb7b2; transform: scale(1.05); }
+        
         footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); margin-top: 50px; }
     </style>
 </head>
@@ -65,16 +68,15 @@
         </div>
     </div>
 
-    <div class="chat-container">
-        <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
-        <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">Mọi người cùng vào chia sẻ cảm xúc và làm quen nhé! ✨</p>
-       <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0QdZ" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
-    </div>
-
-    <div class="contact-section">
+    <div class="contact-box">
         <h3 style="color: #4A90E2; margin-top: 0;">📬 Gửi lời nhắn cho tui</h3>
         <p>Nếu bạn có thắc mắc hay muốn chia sẻ gì thêm, đừng ngại gửi email nhé!</p>
         <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">📧 dicungvanhoc@gmail.com</a>
+    </div>
+
+    <div class="chat-container">
+        <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
+       <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0QdZ" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
     </div>
 
     <footer>
