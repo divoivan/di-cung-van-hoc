@@ -3,38 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đi cùng Văn học - Trạm dừng chân tâm hồn</title>
+    <title>Đi cùng Văn học</title>
     <style>
-        :root {
-            --sky-blue: #A2D2FF;
-            --pastel-pink: #FFC8DD;
-            --paper-white: #FBFAFF;
-            --text-gray: #5A5A5A;
-            --accent-blue: #BDE0FE;
-        }
-        body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
-        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; position: relative; box-sizing: border-box; }
+        :root { --sky-blue: #A2D2FF; --pastel-pink: #FFC8DD; --paper-white: #FBFAFF; --accent-blue: #BDE0FE; }
+        body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; justify-content: center; padding: 20px; }
+        .notebook { background: var(--paper-white); width: 100%; max-width: 950px; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; }
         header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
         .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
         .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
-        .item-card:hover { transform: translateY(-5px); border-color: var(--pastel-pink); box-shadow: 5px 5px 15px rgba(0,0,0,0.05); }
+        .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; }
         .tag { font-size: 0.7em; background: var(--accent-blue); color: #4A90E2; padding: 3px 10px; border-radius: 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
-        
         .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
-        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; font-family: inherit; }
-        
+        textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; }
         .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 20px; box-shadow: 8px 8px 0px var(--accent-blue); }
-        
-        .contact-box { background: #EAF4FF; border: 2px dashed var(--pastel-pink); border-radius: 20px; padding: 30px; margin: 40px 0; text-align: center; }
-        .email-btn { display: inline-block; background: var(--pastel-pink); color: white; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        
         footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); margin-top: 30px; }
     </style>
 </head>
 <body>
-
 <div class="notebook">
     <header>
         <div class="logo">🖋️ Đi cùng Văn học 📝</div>
@@ -44,24 +30,13 @@
     <h3 class="section-title">🇻🇳 Văn học Việt Nam</h3>
     <div class="grid">
         <div class="item-card"><span class="tag">Xuân Diệu</span><h3>Vội vàng</h3><p>Yêu đời cuồng nhiệt như một cuộc chạy đua với thời gian.</p></div>
-        <div class="item-card"><span class="tag">Bảo Ninh</span><h3>Nỗi buồn chiến tranh</h3><p>Mảnh vỡ ký ức bi tráng và đầy ám ảnh về thân phận con người.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Đôi mắt</h3><p>Học cách thay đổi cái nhìn để thấu hiểu sự thật cuộc đời.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Giăng sáng</h3><p>Nghệ thuật phải là tiếng đau khổ thoát ra từ kiếp người.</p></div>
-        <div class="item-card"><span class="tag">Nam Cao</span><h3>Trẻ con không được ăn thịt chó</h3><p>Nỗi xót xa về cái nghèo bóp nghẹt sự hồn nhiên.</p></div>
-        <div class="item-card"><span class="tag">Nguyễn Du</span><h3>Truyện Kiều</h3><p>Bản cáo trạng đanh thép và tiếng lòng nhân đạo bao la.</p></div>
-    </div>
-
-    <h3 class="section-title">🌍 Văn học Nước ngoài</h3>
-    <div class="grid">
-        <div class="item-card"><span class="tag">Hemingway</span><h3>Ông già và biển cả</h3><p>Con người có thể bị hủy diệt, nhưng không bao giờ bị khuất phục.</p></div>
-        <div class="item-card"><span class="tag">Walter Macken</span><h3>Bồ câu bay đi tìm bà</h3><p>Hành trình dũng cảm tìm kiếm hơi ấm gia đình.</p></div>
-        <div class="item-card"><span class="tag">Kazuo Ishiguro</span><h3>Mãi đừng xa tôi</h3><p>Khúc ca buồn sâu thẳm về giá trị con người.</p></div>
-        <div class="item-card"><span class="tag">Hector Malot</span><h3>Trong gia đình</h3><p>Nghị lực phi thường của cô bé Perrine tìm lại người thân.</p></div>
+        <div class="item-card"><span class="tag">Nguyễn Tuân</span><h3>Chữ người tử tù</h3><p>Vẻ đẹp hiên ngang tỏa sáng giữa chốn ngục tù tăm tối.</p></div>
+        <div class="item-card"><span class="tag">Quang Dũng</span><h3>Tây Tiến</h3><p>Khúc ca bi tráng về những người lính lãng mạn, hào hoa.</p></div>
     </div>
 
     <div class="journal-container">
         <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của bạn tại đây..."></textarea>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của bạn tại đây..." oninput="autoSave()"></textarea>
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
             <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
             <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
@@ -71,11 +46,6 @@
     <div class="chat-container">
         <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
         <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0Qdz" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-    </div>
-
-    <div class="contact-box">
-        <h3>💌 Gửi lời nhắn cho tụi mình</h3>
-        <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">✉️ dicungvanhoc@gmail.com</a>
     </div>
 
     <footer>
