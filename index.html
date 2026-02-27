@@ -158,12 +158,33 @@
     </div>
 
     <div class="journal-container">
-        <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <p>Hôm nay bạn vừa đọc tác phẩm nào? Ghi lại cảm xúc ở đây nhé:</p>
-        <textarea placeholder="Viết dòng tâm tình của bạn..."></textarea>
-    </div>
+    <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
+    <p>Ghi lại cảm xúc của bạn (Dữ liệu sẽ được lưu tự động trên trình duyệt này):</p>
+    <textarea id="myJournal" placeholder="Hôm nay bạn thấy thế nào khi đọc xong?..." oninput="saveData()"></textarea>
+    <p id="saveStatus" style="font-size: 0.8em; color: #4A90E2; font-style: italic;"></p>
+</div>
 
-    <div class="contact-box">
+<script>
+    // Hàm này giúp lấy dữ liệu đã lưu khi bạn vừa mở web
+    window.onload = function() {
+        const savedText = localStorage.getItem('journal_content');
+        if (savedText) {
+            document.getElementById('myJournal').value = savedText;
+        }
+    };
+
+    // Hàm này giúp lưu chữ ngay lập tức khi bạn đang gõ
+    function saveData() {
+        const text = document.getElementById('myJournal').value;
+        localStorage.setItem('journal_content', text);
+        document.getElementById('saveStatus').innerText = "Đã tự động lưu... ✨";
+        
+        // Xóa dòng thông báo sau 2 giây
+        setTimeout(() => {
+            document.getElementById('saveStatus').innerText = "";
+        }, 2000);
+    }
+</script>
         <h3>💌 Gửi lời nhắn cho tụi mình</h3>
         <p>Góp ý hoặc chia sẻ mẩu chuyện văn chương của bạn tại:</p>
         <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">✉️ dicungvanhoc@gmail.com</a>
@@ -176,4 +197,5 @@
 
 </body>
 </html>
+
 
