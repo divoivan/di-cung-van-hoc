@@ -15,7 +15,7 @@
         body { background-color: var(--sky-blue); font-family: 'Segoe UI', sans-serif; color: var(--text-gray); margin: 0; display: flex; justify-content: center; padding: 20px; }
         .notebook { background: var(--paper-white); width: 100%; max-width: 950px; min-height: 95vh; border-radius: 20px; box-shadow: 15px 15px 0px var(--pastel-pink); padding: 40px; border: 2px solid #e0e0e0; box-sizing: border-box; position: relative; }
         header { text-align: center; border-bottom: 2px dashed var(--pastel-pink); padding-bottom: 20px; margin-bottom: 30px; }
-        .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .logo { font-size: 2.5em; font-weight: bold; color: #4A90E2; }
         .section-title { color: #FF8FB1; border-left: 5px solid var(--pastel-pink); padding-left: 15px; margin: 40px 0 20px; font-size: 1.5em; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .item-card { background: white; border: 1.5px solid var(--accent-blue); padding: 20px; border-radius: 15px; transition: 0.3s; }
@@ -24,6 +24,9 @@
         .journal-container { background: #FFF9FB; border: 2px solid var(--pastel-pink); border-radius: 15px; padding: 25px; margin-top: 40px; }
         textarea { width: 100%; border: 1px dashed var(--sky-blue); padding: 15px; border-radius: 10px; resize: vertical; outline: none; margin-top: 10px; min-height: 120px; box-sizing: border-box; font-family: inherit; }
         .chat-container { margin-top: 40px; background: white; border: 2px solid var(--accent-blue); border-radius: 20px; padding: 25px; box-shadow: 10px 10px 0px var(--accent-blue); }
+        .contact-section { margin-top: 40px; padding: 30px; background: #f0f7ff; border-radius: 20px; text-align: center; border: 2px dashed var(--pastel-pink); }
+        .email-btn { display: inline-block; padding: 12px 30px; background: var(--pastel-pink); color: white; text-decoration: none; border-radius: 25px; font-weight: bold; margin-top: 15px; transition: 0.3s; }
+        .email-btn:hover { background: #ffb7b2; transform: scale(1.05); }
         footer { text-align: center; font-size: 0.85em; opacity: 0.7; padding: 20px 0; border-top: 1px dashed var(--pastel-pink); margin-top: 50px; }
     </style>
 </head>
@@ -55,7 +58,7 @@
 
     <div class="journal-container">
         <h3 style="color: #FF8FB1; margin-top: 0;">📝 Nhật Ký Đọc Sách</h3>
-        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy ở đây nè..."></textarea>
+        <textarea id="myJournal" placeholder="Ghi lại cảm xúc của mậy..."></textarea>
         <div style="display: flex; justify-content: space-between; margin-top: 10px;">
             <p id="status" style="font-size: 0.8em; color: #4A90E2;"></p>
             <button onclick="clearDiary()" style="background: #FFB7B2; color: white; border: none; padding: 5px 15px; border-radius: 20px; cursor: pointer;">🗑️ Xóa hết</button>
@@ -63,11 +66,17 @@
     </div>
 
     <div class="chat-container">
-        <h3 style="color: #4A90E2; margin-top: 0; display: flex; align-items: center; gap: 10px;">💬 Góc Thảo Luận Công Khai</h3>
-        <p style="font-size: 0.9em; color: #666; margin-bottom: 20px;">Mọi người cùng vào chia sẻ cảm xúc và làm quen với nhau nhé! ✨</p>
-<iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0QdZ" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
+        <h3 style="color: #4A90E2; margin-top: 0;">💬 Góc Thảo Luận Công Khai</h3>
+        <p style="font-size: 0.9em; color: #666; margin-bottom: 15px;">Mọi người cùng vào chia sẻ cảm xúc và làm quen nhé! ✨</p>
+       <iframe src="https://www5.cbox.ws/box/?boxid=961584&boxtag=XU0QdZ" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>	
     </div>
-        
+
+    <div class="contact-section">
+        <h3 style="color: #4A90E2; margin-top: 0;">📬 Gửi lời nhắn cho tui</h3>
+        <p>Nếu bạn có thắc mắc hay muốn chia sẻ gì thêm, đừng ngại gửi email nhé!</p>
+        <a href="mailto:dicungvanhoc@gmail.com" class="email-btn">📧 dicungvanhoc@gmail.com</a>
+    </div>
+
     <footer>
         <p>P/S: Đi cùng Văn học • Chúc bạn tìm thấy niềm vui trong từng trang sách 🖋️</p>
         <p>© 2026 Đi cùng Văn học</p>
@@ -93,5 +102,3 @@
 </script>
 </body>
 </html>
-
-
